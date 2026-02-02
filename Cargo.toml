@@ -27,7 +27,9 @@ w3c = ["dep:base64", "dep:chrono", "dep:rmp-serde"]
 zeroize = ["dep:zeroize"]
 
 [dependencies]
-anoncreds-clsignatures = "0.3.2"
+# anoncreds-clsignatures = "0.3.2"
+# Use pure Rust BigNum instead of OpenSSL
+anoncreds-clsignatures = { version = "0.3.2", default-features = false, features = ["serde"] }
 base64 = { version = "0.22", optional = true }
 bitvec = { version = "1.0.1", features = ["serde"] }
 bs58 = "0.5.0"
